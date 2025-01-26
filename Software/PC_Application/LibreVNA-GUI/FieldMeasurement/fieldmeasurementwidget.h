@@ -24,6 +24,7 @@ public:
 
 signals:
     void SettingsChanged();
+    void TimerUp();
 
 public slots:
     void setPeriod(double period);

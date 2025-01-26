@@ -11,7 +11,7 @@ FieldMeasurementWidget::FieldMeasurementWidget(AppWindow *window, QWidget *paren
     ui->setupUi(this);
     ui->period->setUnit("second");
     ui->period->setPrefixes(" s");
-    ui->period->setPrecision(6); // show enough digits
+    ui->period->setPrecision(1); // show enough digits
 
 
     connect(ui->period, &SIUnitEdit::valueChanged, [=](double newval) {
@@ -36,8 +36,7 @@ FieldMeasurementWidget::~FieldMeasurementWidget()
 void FieldMeasurementWidget::timerEvent(QTimerEvent *event)
 {
     if (event->timerId() == m_timerId) {
-        SettingsChanged();
-
+        emit TimerUp();
     }
 }
 

@@ -29,7 +29,8 @@ public:
 
 
 private slots:
-    void updateMeasurement();
+    void updateSettings();
+    void updateTimerUp();
 
 private:
     FieldMeasurementWidget *central;

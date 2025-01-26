@@ -13,16 +13,21 @@ FieldMeasurement::FieldMeasurement(AppWindow *window, QString name)
     central->setPeriod(0);
 
     finalize(central);
-    connect(central, &FieldMeasurementWidget::SettingsChanged, this, &FieldMeasurement::updateMeasurement);
+    connect(central, &FieldMeasurementWidget::SettingsChanged, this, &FieldMeasurement::updateSettings);
+    connect(central, &FieldMeasurementWidget::TimerUp, this, &FieldMeasurement::updateTimerUp);
 }
 
-void FieldMeasurement::updateMeasurement(){
+void FieldMeasurement::updateSettings(){
 
+}
+
+void FieldMeasurement::updateTimerUp(){
+    //RUN Export Function
 }
 
 void FieldMeasurement::initializeDevice()
 {
-    updateMeasurement();
+    updateSettings();
 }
 
 nlohmann::json FieldMeasurement::toJSON()
