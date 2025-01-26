@@ -3,6 +3,7 @@
 #include "VNA/vna.h"
 #include "SpectrumAnalyzer/spectrumanalyzer.h"
 #include "Generator/generator.h"
+#include "FieldMeasurement/fieldmeasurement.h"
 #include "mode.h"
 #include "averaging.h"
 
@@ -41,6 +42,7 @@ Mode *ModeHandler::createNew(AppWindow *aw, QString name, Mode::Type t)
     case Mode::Type::VNA: return new VNA(aw, name);
     case Mode::Type::SG: return new Generator(aw, name);
     case Mode::Type::SA: return new SpectrumAnalyzer(aw, name);
+    case Mode::Type::FM: return new FieldMeasurement(aw, name);
     default: return nullptr;
     }
 }

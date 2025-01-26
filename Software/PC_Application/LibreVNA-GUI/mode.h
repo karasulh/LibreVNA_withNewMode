@@ -22,6 +22,7 @@ public:
         VNA,
         SG,
         SA,
+        FM,
         Last,
     };
 

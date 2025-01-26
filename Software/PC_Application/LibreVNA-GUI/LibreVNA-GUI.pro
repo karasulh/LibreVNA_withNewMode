@@ -1,6 +1,343 @@
 HEADERS += \
     ../../VNA_embedded/Application/Communication/Protocol.hpp \
     ../../VNA_embedded/Application/Communication/PacketConstants.h \
+    Calibration/Eigen/Cholesky \
+    Calibration/Eigen/CholmodSupport \
+    Calibration/Eigen/Core \
+    Calibration/Eigen/Dense \
+    Calibration/Eigen/Eigen \
+    Calibration/Eigen/Eigenvalues \
+    Calibration/Eigen/Geometry \
+    Calibration/Eigen/Householder \
+    Calibration/Eigen/IterativeLinearSolvers \
+    Calibration/Eigen/Jacobi \
+    Calibration/Eigen/KLUSupport \
+    Calibration/Eigen/LU \
+    Calibration/Eigen/MetisSupport \
+    Calibration/Eigen/OrderingMethods \
+    Calibration/Eigen/PaStiXSupport \
+    Calibration/Eigen/PardisoSupport \
+    Calibration/Eigen/QR \
+    Calibration/Eigen/QtAlignedMalloc \
+    Calibration/Eigen/SPQRSupport \
+    Calibration/Eigen/SVD \
+    Calibration/Eigen/Sparse \
+    Calibration/Eigen/SparseCholesky \
+    Calibration/Eigen/SparseCore \
+    Calibration/Eigen/SparseLU \
+    Calibration/Eigen/SparseQR \
+    Calibration/Eigen/StdDeque \
+    Calibration/Eigen/StdList \
+    Calibration/Eigen/StdVector \
+    Calibration/Eigen/SuperLUSupport \
+    Calibration/Eigen/UmfPackSupport \
+    Calibration/Eigen/src/Cholesky/LDLT.h \
+    Calibration/Eigen/src/Cholesky/LLT.h \
+    Calibration/Eigen/src/Cholesky/LLT_LAPACKE.h \
+    Calibration/Eigen/src/CholmodSupport/CholmodSupport.h \
+    Calibration/Eigen/src/Core/ArithmeticSequence.h \
+    Calibration/Eigen/src/Core/Array.h \
+    Calibration/Eigen/src/Core/ArrayBase.h \
+    Calibration/Eigen/src/Core/ArrayWrapper.h \
+    Calibration/Eigen/src/Core/Assign.h \
+    Calibration/Eigen/src/Core/AssignEvaluator.h \
+    Calibration/Eigen/src/Core/Assign_MKL.h \
+    Calibration/Eigen/src/Core/BandMatrix.h \
+    Calibration/Eigen/src/Core/Block.h \
+    Calibration/Eigen/src/Core/BooleanRedux.h \
+    Calibration/Eigen/src/Core/CommaInitializer.h \
+    Calibration/Eigen/src/Core/ConditionEstimator.h \
+    Calibration/Eigen/src/Core/CoreEvaluators.h \
+    Calibration/Eigen/src/Core/CoreIterators.h \
+    Calibration/Eigen/src/Core/CwiseBinaryOp.h \
+    Calibration/Eigen/src/Core/CwiseNullaryOp.h \
+    Calibration/Eigen/src/Core/CwiseTernaryOp.h \
+    Calibration/Eigen/src/Core/CwiseUnaryOp.h \
+    Calibration/Eigen/src/Core/CwiseUnaryView.h \
+    Calibration/Eigen/src/Core/DenseBase.h \
+    Calibration/Eigen/src/Core/DenseCoeffsBase.h \
+    Calibration/Eigen/src/Core/DenseStorage.h \
+    Calibration/Eigen/src/Core/Diagonal.h \
+    Calibration/Eigen/src/Core/DiagonalMatrix.h \
+    Calibration/Eigen/src/Core/DiagonalProduct.h \
+    Calibration/Eigen/src/Core/Dot.h \
+    Calibration/Eigen/src/Core/EigenBase.h \
+    Calibration/Eigen/src/Core/ForceAlignedAccess.h \
+    Calibration/Eigen/src/Core/Fuzzy.h \
+    Calibration/Eigen/src/Core/GeneralProduct.h \
+    Calibration/Eigen/src/Core/GenericPacketMath.h \
+    Calibration/Eigen/src/Core/GlobalFunctions.h \
+    Calibration/Eigen/src/Core/IO.h \
+    Calibration/Eigen/src/Core/IndexedView.h \
+    Calibration/Eigen/src/Core/Inverse.h \
+    Calibration/Eigen/src/Core/Map.h \
+    Calibration/Eigen/src/Core/MapBase.h \
+    Calibration/Eigen/src/Core/MathFunctions.h \
+    Calibration/Eigen/src/Core/MathFunctionsImpl.h \
+    Calibration/Eigen/src/Core/Matrix.h \
+    Calibration/Eigen/src/Core/MatrixBase.h \
+    Calibration/Eigen/src/Core/NestByValue.h \
+    Calibration/Eigen/src/Core/NoAlias.h \
+    Calibration/Eigen/src/Core/NumTraits.h \
+    Calibration/Eigen/src/Core/PartialReduxEvaluator.h \
+    Calibration/Eigen/src/Core/PermutationMatrix.h \
+    Calibration/Eigen/src/Core/PlainObjectBase.h \
+    Calibration/Eigen/src/Core/Product.h \
+    Calibration/Eigen/src/Core/ProductEvaluators.h \
+    Calibration/Eigen/src/Core/Random.h \
+    Calibration/Eigen/src/Core/Redux.h \
+    Calibration/Eigen/src/Core/Ref.h \
+    Calibration/Eigen/src/Core/Replicate.h \
+    Calibration/Eigen/src/Core/Reshaped.h \
+    Calibration/Eigen/src/Core/ReturnByValue.h \
+    Calibration/Eigen/src/Core/Reverse.h \
+    Calibration/Eigen/src/Core/Select.h \
+    Calibration/Eigen/src/Core/SelfAdjointView.h \
+    Calibration/Eigen/src/Core/SelfCwiseBinaryOp.h \
+    Calibration/Eigen/src/Core/Solve.h \
+    Calibration/Eigen/src/Core/SolveTriangular.h \
+    Calibration/Eigen/src/Core/SolverBase.h \
+    Calibration/Eigen/src/Core/StableNorm.h \
+    Calibration/Eigen/src/Core/StlIterators.h \
+    Calibration/Eigen/src/Core/Stride.h \
+    Calibration/Eigen/src/Core/Swap.h \
+    Calibration/Eigen/src/Core/Transpose.h \
+    Calibration/Eigen/src/Core/Transpositions.h \
+    Calibration/Eigen/src/Core/TriangularMatrix.h \
+    Calibration/Eigen/src/Core/VectorBlock.h \
+    Calibration/Eigen/src/Core/VectorwiseOp.h \
+    Calibration/Eigen/src/Core/Visitor.h \
+    Calibration/Eigen/src/Core/arch/AVX/Complex.h \
+    Calibration/Eigen/src/Core/arch/AVX/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/AVX/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/AVX/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/AVX512/Complex.h \
+    Calibration/Eigen/src/Core/arch/AVX512/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/AVX512/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/AVX512/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/Complex.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/MatrixProduct.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/MatrixProductCommon.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/MatrixProductMMA.h \
+    Calibration/Eigen/src/Core/arch/AltiVec/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/CUDA/Complex.h \
+    Calibration/Eigen/src/Core/arch/Default/BFloat16.h \
+    Calibration/Eigen/src/Core/arch/Default/ConjHelper.h \
+    Calibration/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+    Calibration/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+    Calibration/Eigen/src/Core/arch/Default/Half.h \
+    Calibration/Eigen/src/Core/arch/Default/Settings.h \
+    Calibration/Eigen/src/Core/arch/Default/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/GPU/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/GPU/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/GPU/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/HIP/hcc/math_constants.h \
+    Calibration/Eigen/src/Core/arch/MSA/Complex.h \
+    Calibration/Eigen/src/Core/arch/MSA/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/MSA/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/NEON/Complex.h \
+    Calibration/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
+    Calibration/Eigen/src/Core/arch/NEON/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/NEON/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/NEON/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/SSE/Complex.h \
+    Calibration/Eigen/src/Core/arch/SSE/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/SSE/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/SSE/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/SVE/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/SVE/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/SVE/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/SYCL/InteropHeaders.h \
+    Calibration/Eigen/src/Core/arch/SYCL/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/SYCL/PacketMath.h \
+    Calibration/Eigen/src/Core/arch/SYCL/SyclMemoryModel.h \
+    Calibration/Eigen/src/Core/arch/SYCL/TypeCasting.h \
+    Calibration/Eigen/src/Core/arch/ZVector/Complex.h \
+    Calibration/Eigen/src/Core/arch/ZVector/MathFunctions.h \
+    Calibration/Eigen/src/Core/arch/ZVector/PacketMath.h \
+    Calibration/Eigen/src/Core/functors/AssignmentFunctors.h \
+    Calibration/Eigen/src/Core/functors/BinaryFunctors.h \
+    Calibration/Eigen/src/Core/functors/NullaryFunctors.h \
+    Calibration/Eigen/src/Core/functors/StlFunctors.h \
+    Calibration/Eigen/src/Core/functors/TernaryFunctors.h \
+    Calibration/Eigen/src/Core/functors/UnaryFunctors.h \
+    Calibration/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixVector.h \
+    Calibration/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h \
+    Calibration/Eigen/src/Core/products/Parallelizer.h \
+    Calibration/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+    Calibration/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h \
+    Calibration/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+    Calibration/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h \
+    Calibration/Eigen/src/Core/products/SelfadjointProduct.h \
+    Calibration/Eigen/src/Core/products/SelfadjointRank2Update.h \
+    Calibration/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+    Calibration/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h \
+    Calibration/Eigen/src/Core/products/TriangularMatrixVector.h \
+    Calibration/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h \
+    Calibration/Eigen/src/Core/products/TriangularSolverMatrix.h \
+    Calibration/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h \
+    Calibration/Eigen/src/Core/products/TriangularSolverVector.h \
+    Calibration/Eigen/src/Core/util/BlasUtil.h \
+    Calibration/Eigen/src/Core/util/ConfigureVectorization.h \
+    Calibration/Eigen/src/Core/util/Constants.h \
+    Calibration/Eigen/src/Core/util/DisableStupidWarnings.h \
+    Calibration/Eigen/src/Core/util/ForwardDeclarations.h \
+    Calibration/Eigen/src/Core/util/IndexedViewHelper.h \
+    Calibration/Eigen/src/Core/util/IntegralConstant.h \
+    Calibration/Eigen/src/Core/util/MKL_support.h \
+    Calibration/Eigen/src/Core/util/Macros.h \
+    Calibration/Eigen/src/Core/util/Memory.h \
+    Calibration/Eigen/src/Core/util/Meta.h \
+    Calibration/Eigen/src/Core/util/NonMPL2.h \
+    Calibration/Eigen/src/Core/util/ReenableStupidWarnings.h \
+    Calibration/Eigen/src/Core/util/ReshapedHelper.h \
+    Calibration/Eigen/src/Core/util/StaticAssert.h \
+    Calibration/Eigen/src/Core/util/SymbolicIndex.h \
+    Calibration/Eigen/src/Core/util/XprHelper.h \
+    Calibration/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+    Calibration/Eigen/src/Eigenvalues/ComplexSchur.h \
+    Calibration/Eigen/src/Eigenvalues/ComplexSchur_LAPACKE.h \
+    Calibration/Eigen/src/Eigenvalues/EigenSolver.h \
+    Calibration/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+    Calibration/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+    Calibration/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+    Calibration/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+    Calibration/Eigen/src/Eigenvalues/RealQZ.h \
+    Calibration/Eigen/src/Eigenvalues/RealSchur.h \
+    Calibration/Eigen/src/Eigenvalues/RealSchur_LAPACKE.h \
+    Calibration/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+    Calibration/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h \
+    Calibration/Eigen/src/Eigenvalues/Tridiagonalization.h \
+    Calibration/Eigen/src/Geometry/AlignedBox.h \
+    Calibration/Eigen/src/Geometry/AngleAxis.h \
+    Calibration/Eigen/src/Geometry/EulerAngles.h \
+    Calibration/Eigen/src/Geometry/Homogeneous.h \
+    Calibration/Eigen/src/Geometry/Hyperplane.h \
+    Calibration/Eigen/src/Geometry/OrthoMethods.h \
+    Calibration/Eigen/src/Geometry/ParametrizedLine.h \
+    Calibration/Eigen/src/Geometry/Quaternion.h \
+    Calibration/Eigen/src/Geometry/Rotation2D.h \
+    Calibration/Eigen/src/Geometry/RotationBase.h \
+    Calibration/Eigen/src/Geometry/Scaling.h \
+    Calibration/Eigen/src/Geometry/Transform.h \
+    Calibration/Eigen/src/Geometry/Translation.h \
+    Calibration/Eigen/src/Geometry/Umeyama.h \
+    Calibration/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+    Calibration/Eigen/src/Householder/BlockHouseholder.h \
+    Calibration/Eigen/src/Householder/Householder.h \
+    Calibration/Eigen/src/Householder/HouseholderSequence.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+    Calibration/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+    Calibration/Eigen/src/Jacobi/Jacobi.h \
+    Calibration/Eigen/src/KLUSupport/KLUSupport.h \
+    Calibration/Eigen/src/LU/Determinant.h \
+    Calibration/Eigen/src/LU/FullPivLU.h \
+    Calibration/Eigen/src/LU/InverseImpl.h \
+    Calibration/Eigen/src/LU/PartialPivLU.h \
+    Calibration/Eigen/src/LU/PartialPivLU_LAPACKE.h \
+    Calibration/Eigen/src/LU/arch/InverseSize4.h \
+    Calibration/Eigen/src/MetisSupport/MetisSupport.h \
+    Calibration/Eigen/src/OrderingMethods/Amd.h \
+    Calibration/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+    Calibration/Eigen/src/OrderingMethods/Ordering.h \
+    Calibration/Eigen/src/PaStiXSupport/PaStiXSupport.h \
+    Calibration/Eigen/src/PardisoSupport/PardisoSupport.h \
+    Calibration/Eigen/src/QR/ColPivHouseholderQR.h \
+    Calibration/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h \
+    Calibration/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+    Calibration/Eigen/src/QR/FullPivHouseholderQR.h \
+    Calibration/Eigen/src/QR/HouseholderQR.h \
+    Calibration/Eigen/src/QR/HouseholderQR_LAPACKE.h \
+    Calibration/Eigen/src/SPQRSupport/SuiteSparseQRSupport.h \
+    Calibration/Eigen/src/SVD/BDCSVD.h \
+    Calibration/Eigen/src/SVD/JacobiSVD.h \
+    Calibration/Eigen/src/SVD/JacobiSVD_LAPACKE.h \
+    Calibration/Eigen/src/SVD/SVDBase.h \
+    Calibration/Eigen/src/SVD/UpperBidiagonalization.h \
+    Calibration/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+    Calibration/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+    Calibration/Eigen/src/SparseCore/AmbiVector.h \
+    Calibration/Eigen/src/SparseCore/CompressedStorage.h \
+    Calibration/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+    Calibration/Eigen/src/SparseCore/MappedSparseMatrix.h \
+    Calibration/Eigen/src/SparseCore/SparseAssign.h \
+    Calibration/Eigen/src/SparseCore/SparseBlock.h \
+    Calibration/Eigen/src/SparseCore/SparseColEtree.h \
+    Calibration/Eigen/src/SparseCore/SparseCompressedBase.h \
+    Calibration/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+    Calibration/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+    Calibration/Eigen/src/SparseCore/SparseDenseProduct.h \
+    Calibration/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+    Calibration/Eigen/src/SparseCore/SparseDot.h \
+    Calibration/Eigen/src/SparseCore/SparseFuzzy.h \
+    Calibration/Eigen/src/SparseCore/SparseMap.h \
+    Calibration/Eigen/src/SparseCore/SparseMatrix.h \
+    Calibration/Eigen/src/SparseCore/SparseMatrixBase.h \
+    Calibration/Eigen/src/SparseCore/SparsePermutation.h \
+    Calibration/Eigen/src/SparseCore/SparseProduct.h \
+    Calibration/Eigen/src/SparseCore/SparseRedux.h \
+    Calibration/Eigen/src/SparseCore/SparseRef.h \
+    Calibration/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+    Calibration/Eigen/src/SparseCore/SparseSolverBase.h \
+    Calibration/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+    Calibration/Eigen/src/SparseCore/SparseTranspose.h \
+    Calibration/Eigen/src/SparseCore/SparseTriangularView.h \
+    Calibration/Eigen/src/SparseCore/SparseUtil.h \
+    Calibration/Eigen/src/SparseCore/SparseVector.h \
+    Calibration/Eigen/src/SparseCore/SparseView.h \
+    Calibration/Eigen/src/SparseCore/TriangularSolver.h \
+    Calibration/Eigen/src/SparseLU/SparseLU.h \
+    Calibration/Eigen/src/SparseLU/SparseLUImpl.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_Memory.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_Structs.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_Utils.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_pivotL.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_pruneL.h \
+    Calibration/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+    Calibration/Eigen/src/SparseQR/SparseQR.h \
+    Calibration/Eigen/src/StlSupport/StdDeque.h \
+    Calibration/Eigen/src/StlSupport/StdList.h \
+    Calibration/Eigen/src/StlSupport/StdVector.h \
+    Calibration/Eigen/src/StlSupport/details.h \
+    Calibration/Eigen/src/SuperLUSupport/SuperLUSupport.h \
+    Calibration/Eigen/src/UmfPackSupport/UmfPackSupport.h \
+    Calibration/Eigen/src/misc/Image.h \
+    Calibration/Eigen/src/misc/Kernel.h \
+    Calibration/Eigen/src/misc/RealSvd2x2.h \
+    Calibration/Eigen/src/misc/blas.h \
+    Calibration/Eigen/src/misc/lapack.h \
+    Calibration/Eigen/src/misc/lapacke.h \
+    Calibration/Eigen/src/misc/lapacke_mangling.h \
+    Calibration/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+    Calibration/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+    Calibration/Eigen/src/plugins/BlockMethods.h \
+    Calibration/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+    Calibration/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+    Calibration/Eigen/src/plugins/IndexedViewMethods.h \
+    Calibration/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+    Calibration/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+    Calibration/Eigen/src/plugins/ReshapedMethods.h \
     Calibration/LibreCAL/caldevice.h \
     Calibration/LibreCAL/librecaldialog.h \
     Calibration/LibreCAL/usbdevice.h \
@@ -44,6 +381,8 @@ HEADERS += \
     Device/devicelog.h \
     Device/devicetcpdriver.h \
     Device/tracedifferencegenerator.h \
+    FieldMeasurement/fieldmeasurement.h \
+    FieldMeasurement/fieldmeasurementwidget.h \
     Generator/generator.h \
     Generator/signalgenwidget.h \
     SpectrumAnalyzer/spectrumanalyzer.h \
@@ -205,6 +544,8 @@ SOURCES += \
     Device/devicedriver.cpp \
     Device/devicelog.cpp \
     Device/devicetcpdriver.cpp \
+    FieldMeasurement/fieldmeasurement.cpp \
+    FieldMeasurement/fieldmeasurementwidget.cpp \
     Generator/generator.cpp \
     Generator/signalgenwidget.cpp \
     SpectrumAnalyzer/spectrumanalyzer.cpp \
@@ -316,9 +657,13 @@ osx:INCPATH += /usr/local/include
 osx:LIBS += -L/usr/local/lib $(shell pkg-config --libs libusb-1.0)
 
 mac{
+        QMAKE_EXPORT += PKG_CONFIG_PATH
+        PKG_CONFIG_PATH = /opt/homebrew/lib/pkgconfig
         QT_CONFIG -= no-pkg-config
         CONFIG += link_pkgconfig
-        PKGCONFIG += libusb-1.0
+        #PKGCONFIG += libusb-1.0
+        LIBS += -L/opt/homebrew/lib
+        INCLUDEPATH += /opt/homebrew/include/libusb-1.0
 }
 
 QT += widgets network
@@ -355,7 +700,9 @@ FORMS += \
     Device/LibreVNA/manualcontroldialogvff.ui \
     Device/devicelog.ui \
     Device/devicetcpdriversettings.ui \
+    FieldMeasurement/fieldmeasurementwidget.ui \
     Generator/signalgenwidget.ui \
+    FieldMeasurement/fieldmeasurementwidget.ui \
     Tools/impedancematchdialog.ui \
     Tools/mixedmodeconversion.ui \
     Traces/Marker/markerwidget.ui \
@@ -394,10 +741,98 @@ FORMS += \
     main.ui \
     preferencesdialog.ui
 
-DISTFILES +=
+DISTFILES += \
+    fixMacDylibs.sh \
+    icons/DUT.png \
+    icons/DUT.svg \
+    icons/DUT_onePort.png \
+    icons/LibreVNAV1.svg \
+    icons/add.png \
+    icons/cancel.png \
+    icons/chainlink.png \
+    icons/clear.png \
+    icons/close.svg \
+    icons/compound_V1_Ref_Left.png \
+    icons/compound_V1_Ref_Left.svg \
+    icons/compound_V1_Ref_Middle.png \
+    icons/compound_V1_Ref_Middle.svg \
+    icons/compound_V1_Ref_Right.png \
+    icons/compound_V1_Ref_Right.svg \
+    icons/compound_V1_USB.png \
+    icons/compound_V1_USB.svg \
+    icons/deembedding_disabled.svg \
+    icons/deembedding_enabled.svg \
+    icons/definedShunt.png \
+    icons/definedShunt.svg \
+    icons/definedThrough.png \
+    icons/definedThrough.svg \
+    icons/down.png \
+    icons/edit.png \
+    icons/export.png \
+    icons/horizontal.svg \
+    icons/import.png \
+    icons/invisible.svg \
+    icons/math_disabled.svg \
+    icons/math_enabled.svg \
+    icons/ok.png \
+    icons/open.png \
+    icons/pCsC.png \
+    icons/pCsC_small.png \
+    icons/pCsL.png \
+    icons/pCsL_small.png \
+    icons/pLsC.png \
+    icons/pLsC_small.png \
+    icons/pLsL.png \
+    icons/pLsL_small.png \
+    icons/parallelC.png \
+    icons/parallelC.svg \
+    icons/parallelL.png \
+    icons/parallelL.svg \
+    icons/parallelR.png \
+    icons/parallelR.svg \
+    icons/pause.svg \
+    icons/play.png \
+    icons/play.svg \
+    icons/plus.svg \
+    icons/port.png \
+    icons/port1.png \
+    icons/port1.svg \
+    icons/port2.png \
+    icons/port2.svg \
+    icons/refresh.png \
+    icons/remove.png \
+    icons/sCpC.png \
+    icons/sCpC_small.png \
+    icons/sCpL.png \
+    icons/sCpL_small.png \
+    icons/sLpC.png \
+    icons/sLpC_small.png \
+    icons/sLpL.png \
+    icons/sLpL_small.png \
+    icons/save.png \
+    icons/seriesC.png \
+    icons/seriesC.svg \
+    icons/seriesL.png \
+    icons/seriesL.svg \
+    icons/seriesR.png \
+    icons/seriesR.svg \
+    icons/trash.png \
+    icons/up.png \
+    icons/vertical.svg \
+    icons/visible.svg \
+    icons/zoom-fit.png \
+    icons/zoom-in.png \
+    icons/zoom-out.png \
+    resources/banner.png \
+    resources/librevna.desktop \
+    resources/librevna.png \
+    resources/librevna.svg
 
 RESOURCES += \
     icons.qrc \
+    icons.qrc \
+    resources.qrc \
+    resources/librevna.qrc \
     resources/librevna.qrc
 
 QMAKE_CXXFLAGS += -Wno-deprecated -Wno-deprecated-declarations -Wno-deprecated-copy

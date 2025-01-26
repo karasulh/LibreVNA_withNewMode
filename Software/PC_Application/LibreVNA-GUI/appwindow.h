@@ -31,6 +31,7 @@ class MainWindow;
 class VNA;
 class Generator;
 class SpectrumAnalyzer;
+class FieldMeasurement;
 class ModeHandler;
 class Mode;
 

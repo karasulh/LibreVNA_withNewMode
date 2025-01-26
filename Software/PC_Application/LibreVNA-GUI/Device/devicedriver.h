@@ -419,7 +419,6 @@ public:
         // Output port. Port count starts at 1, set to zero to disable all ports
         int port;
     };
-
     /**
      * @brief Names of available generator ports.
      *

@@ -14,6 +14,8 @@
 #include "ui_main.h"
 #include "preferences.h"
 #include "Generator/signalgenwidget.h"
+#include "FieldMeasurement/fieldmeasurement.h"
+#include "FieldMeasurement/fieldmeasurementwidget.h"
 #include "VNA/vna.h"
 #include "Generator/generator.h"
 #include "SpectrumAnalyzer/spectrumanalyzer.h"
@@ -302,6 +304,7 @@ void AppWindow::SetInitialState()
         auto vnaIndex = modeHandler->createMode("Vector Network Analyzer", Mode::Type::VNA);
         modeHandler->createMode("Signal Generator", Mode::Type::SG);
         modeHandler->createMode("Spectrum Analyzer", Mode::Type::SA);
+        modeHandler->createMode("Field Measurement", Mode::Type::FM);
         modeHandler->setCurrentIndex(vnaIndex);
     }
 }
@@ -312,6 +315,7 @@ void AppWindow::SetResetState()
     auto vnaIndex = modeHandler->createMode("Vector Network Analyzer", Mode::Type::VNA);
     modeHandler->createMode("Signal Generator", Mode::Type::SG);
     modeHandler->createMode("Spectrum Analyzer", Mode::Type::SA);
+    modeHandler->createMode("Field Measurement", Mode::Type::FM);
 
     for(auto m : modeHandler->getModes()) {
         m->resetSettings();
@@ -700,6 +704,7 @@ void AppWindow::SetupSCPI()
             case Mode::Type::VNA: return "VNA";
             case Mode::Type::SG: return "GEN";
             case Mode::Type::SA: return "SA";
+            case Mode::Type::FM: return "FM";
             case Mode::Type::Last: return SCPI::getResultName(SCPI::Result::Error);
             }
         }
@@ -838,6 +843,7 @@ void AppWindow::preferencesChanged()
                 }
                 break;
             case Mode::Type::SG:
+            case Mode::Type::FM:
             case Mode::Type::Last:
             default:
                 break;
@@ -1201,6 +1207,11 @@ void AppWindow::LoadSetup(nlohmann::json j)
         auto saIndex = modeHandler->createMode("Spectrum Analyzer", Mode::Type::SA);
         auto *spectrumAnalyzer = static_cast<SpectrumAnalyzer*>(modeHandler->getMode(saIndex));
         spectrumAnalyzer->fromJSON(j["SpectrumAnalyzer"]);
+    }
+    if(j.contains("FieldMeasurement")) {
+        auto fmIndex = modeHandler->createMode("Field Measurement", Mode::Type::FM);
+        auto *fieldMeasurement = static_cast<FieldMeasurement*>(modeHandler->getMode(fmIndex));
+        fieldMeasurement->fromJSON(j["FieldMeasurement"]);
     }
     if(j.contains("Modes")) {
         for(auto jm : j["Modes"]) {
